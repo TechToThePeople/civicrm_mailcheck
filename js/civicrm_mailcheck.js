@@ -2,7 +2,7 @@
 
   var domains = ['hotmail.com', 'gmail.com', 'aol.com'];
   var $msgbox = $('<div id="civicrm_mailcheck-msg">');
-  var $msgbox_link = $('<a href="javascript:(function(){})();">').appendTo($msgbox);
+  var $msgbox_link = $('<a href="#">').appendTo($msgbox);
   $msgbox.prepend('Did you mean ');
   $msgbox.append(' ?');
   console.log($msgbox.html());
