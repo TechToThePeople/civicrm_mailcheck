@@ -1,10 +1,8 @@
 (function($){
 
   var domains = ['hotmail.com', 'gmail.com', 'aol.com'];
-  var $msgbox = $('<div id="civicrm_mailcheck-msg">');
-  var $msgbox_link = $('<a href="#">').appendTo($msgbox);
-  $msgbox.prepend('Did you mean ');
-  $msgbox.append(' ?');
+  var $msgbox = $('<div id="civicrm_mailcheck-msg">Did you mean <a href="#"></a>?</div>');
+  var $msgbox_link = $msgbox.find('a');
   console.log($msgbox.html());
   var suggestion_full = null;
   $msgbox_link.click(function(){
