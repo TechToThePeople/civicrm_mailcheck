@@ -1,18 +1,17 @@
 (function($){
 
   // var domains = ['hotmail.com', 'gmail.com', 'aol.com'];
-  var $msgbox = $('<div id="civicrm_mailcheck-msg">');
-  var $msgbox_link = $('<a href="#">').appendTo($msgbox);
-  $msgbox.prepend('Did you mean ');
-  $msgbox.append(' ?');
+  var $msgbox = $('<div id="civicrm_mailcheck-msg">Did you mean <a href="#civicrm_mailcheck-msg"></a>?</div>');
+  var $msgbox_link = $msgbox.find('a');
   console.log($msgbox.html());
   var suggestion_full = null;
   $msgbox_link.click(function(){
     if (input_with_msgbox && suggestion_full) {
-      $(input_with_msgbox).val(suggestion_full);
+      $(input_with_msgbox).val(suggestion_full).focus();
       $msgbox.remove();
       input_with_msgbox = null;
       suggestion_full = null;
+      return false;
     }
   });
   var input_with_msgbox = null;
