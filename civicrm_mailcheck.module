@@ -19,8 +19,9 @@ function civicrm_mailcheck_civicrm_buildForm($form_name, &$form) {
       }
     }
   }
-  if (empty ($email_keys))
+  if (empty ($email_keys)) {
     return;
+  }
   @$js_settings['email_fields'] = $email_keys;
   drupal_add_js(array('civicrm_mailcheck' => $js_settings), 'setting');
   drupal_add_js(drupal_get_path('module', 'civicrm_mailcheck') . '/js/jquery.mailcheck.js');
