@@ -6,17 +6,21 @@
  */
 function civicrm_mailcheck_civicrm_buildForm($form_name, &$form) {
   $email_keys = array();
-  if (is_array($form->_rules)) {
-    foreach ($form->_rules as $key => $rules) {
-      if (is_array($rules)) {
-        foreach ($rules as $i => $rule) {
-          if (is_array($rule) && $rule['type'] === 'email') {
-            $email_keys[$key] = $key;
-          }
-        }
+  if (!is_array($form->_rules)) { 
+    return;
+  }
+  foreach ($form->_rules as $key => $rules) {
+    if (!is_array($rules)) {
+      continue;
+    }
+    foreach ($rules as $i => $rule) {
+      if (is_array($rule) && $rule['type'] === 'email') {
+        $email_keys[$key] = $key;
       }
     }
   }
+  if (empty ($email_keys))
+    return;
   @$js_settings['email_fields'] = $email_keys;
   drupal_add_js(array('civicrm_mailcheck' => $js_settings), 'setting');
   drupal_add_js(drupal_get_path('module', 'civicrm_mailcheck') . '/js/jquery.mailcheck.js');
