@@ -27,3 +27,14 @@ function civicrm_mailcheck_civicrm_buildForm($form_name, &$form) {
   drupal_add_js(drupal_get_path('module', 'civicrm_mailcheck') . '/js/jquery.mailcheck.js');
   drupal_add_js(drupal_get_path('module', 'civicrm_mailcheck') . '/js/civicrm_mailcheck.js');
 }
+
+/**
+* Implements hook_help().
+*/
+function civicrm_mailcheck_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#civicrm_mailcheck':
+      // Return a line-break version of the module README.txt
+      return filter_filter('process', 1, NULL, file_get_contents( dirname(__FILE__) . "/README.txt") );
+  }
+}
