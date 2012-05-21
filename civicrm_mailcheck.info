@@ -1,0 +1,4 @@
+name = "CiviCRM Mailcheck"
+description = "client-side check for email addresses that look wrong"
+core = 7.x
+package = CiviCRM
