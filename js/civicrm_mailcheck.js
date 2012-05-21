@@ -1,8 +1,8 @@
 (function($){
 
-  var domains = ['hotmail.com', 'gmail.com', 'aol.com'];
+  // var domains = ['hotmail.com', 'gmail.com', 'aol.com'];
   var $msgbox = $('<div id="civicrm_mailcheck-msg">');
-  var $msgbox_link = $('<a href="javascript:(function(){})();">').appendTo($msgbox);
+  var $msgbox_link = $('<a href="#">').appendTo($msgbox);
   $msgbox.prepend('Did you mean ');
   $msgbox.append(' ?');
   console.log($msgbox.html());
@@ -21,8 +21,9 @@
     attach: function(context, settings) {
       console.log('attach', settings);
       for (var k in settings.civicrm_mailcheck.email_fields) {
-        var $field = $('#' + k);
-        console.log($field);
+        var selector = '[name="' + k + '"]';
+        var $field = $(selector);
+        console.log(selector, $field);
         $('#' + k).blur(function() {
           console.log(this);
           $(this).mailcheck({
