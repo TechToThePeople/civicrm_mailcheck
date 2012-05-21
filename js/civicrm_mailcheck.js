@@ -7,7 +7,7 @@
   var suggestion_full = null;
   $msgbox_link.click(function(){
     if (input_with_msgbox && suggestion_full) {
-      $(input_with_msgbox).val(suggestion_full);
+      $(input_with_msgbox).val(suggestion_full).focus();
       $msgbox.remove();
       input_with_msgbox = null;
       suggestion_full = null;
