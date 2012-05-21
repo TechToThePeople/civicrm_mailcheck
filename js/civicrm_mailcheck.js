@@ -1,7 +1,7 @@
 (function($){
 
   var domains = ['hotmail.com', 'gmail.com', 'aol.com'];
-  var $msgbox = $('<div id="civicrm_mailcheck-msg">Did you mean <a href="#"></a>?</div>');
+  var $msgbox = $('<div id="civicrm_mailcheck-msg">Did you mean <a href="#civicrm_mailcheck-msg"></a>?</div>');
   var $msgbox_link = $msgbox.find('a');
   console.log($msgbox.html());
   var suggestion_full = null;
@@ -11,6 +11,7 @@
       $msgbox.remove();
       input_with_msgbox = null;
       suggestion_full = null;
+      return false;
     }
   });
   var input_with_msgbox = null;
