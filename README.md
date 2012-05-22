@@ -1,2 +1,1 @@
-civicrm_mailcheck
-=================
+README.txt
