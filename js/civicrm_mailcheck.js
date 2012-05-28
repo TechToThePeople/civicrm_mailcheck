@@ -1,7 +1,7 @@
 (function($){
 
   // var domains = ['hotmail.com', 'gmail.com', 'aol.com'];
-  var $msgbox = $('<div id="civicrm_mailcheck-msg">Did you mean <a href="#civicrm_mailcheck-msg"></a>?</div>');
+  var $msgbox = $('<div id="civicrm_mailcheck-msg">'+ Drupal.t("Did you mean")+' <a href="#civicrm_mailcheck-msg"></a>?</div>');
   var $msgbox_link = $msgbox.find('a');
   var suggestion_full = null;
   $msgbox_link.click(function(){
