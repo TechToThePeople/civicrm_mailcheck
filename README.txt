@@ -1,7 +1,7 @@
 Copyright Tech To The People 2012. Andreas Henning & Xavier Dutoit.
 Wikimedia France has sponsored the development.
 
-This module helps avoiding basic typos when filling a civicrm powered form than contains an email field.
+This module helps avoiding basic typos when filling a civicrm powered form that contains an email field.
 
 For instance if I'm trying to make a donation with the email john.doe@gmail.cm, it will suggest "Did you mean john.doe@gmail.com". 
 If I then clicks on the (correct) suggested email, it automatically updates the email field.
